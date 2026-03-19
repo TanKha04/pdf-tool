@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tách và Gộp File PDF - By Trầm Tấn Khá</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                </svg>
+            </div>
+            <div class="header-text">
+                <h1>Công cụ Tách & Gộp PDF</h1>
+                <p class="subtitle">Quản lý file PDF dễ dàng và chuyên nghiệp</p>
+            </div>
+        </div>
+        
+        <div class="upload-section">
+            <div class="upload-box">
+                <input type="file" id="fileInput" accept=".pdf" multiple>
+                <label for="fileInput" class="upload-label">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                    </svg>
+                    <span>Chọn file PDF hoặc kéo thả vào đây</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="mergeBtn" class="btn btn-primary">Gộp File</button>
+            <button id="splitBtn" class="btn btn-secondary">Tách File</button>
+            <button id="previewBtn" class="btn btn-info">Xem Trước</button>
+            <button id="clearBtn" class="btn btn-danger">Xóa Tất Cả</button>
+        </div>
+
+        <div id="fileList" class="file-list"></div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Thiết kế bởi <span class="designer-name">Trầm Tấn Khá</span></p>
+                <p class="copyright">© 2024 - Công cụ PDF miễn phí</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal xem trước -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Xem Trước PDF</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="previewContainer" class="preview-container"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="filename-input-group">
+                    <label for="outputFileName">Tên file:</label>
+                    <input type="text" id="outputFileName" value="merged_file" placeholder="Nhập tên file">
+                    <span>.pdf</span>
+                </div>
+                <button id="downloadPreviewBtn" class="btn btn-primary">Tải Về File Đã Chọn</button>
+                <button id="closePreviewBtn" class="btn btn-secondary">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
